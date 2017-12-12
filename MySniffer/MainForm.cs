@@ -279,10 +279,6 @@ namespace MySniffer
                         padList.Add(rowData);
                     }
 
-                    //saveAllData.SaveAll(saveAllData.MyConnect,rowData);
-
-
-
 
 
                     if (rowsLinebuffer[1] == "OICQ")
