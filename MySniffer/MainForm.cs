@@ -52,10 +52,6 @@ namespace MySniffer
         List<ProcessingQQLoginLogout> pqllBufferList = new List<ProcessingQQLoginLogout>();
 
 
-        /// <summary>
-        /// 邮件引用
-        /// </summary>
-        ProcessingEmail pe = new ProcessingEmail();
 
         private int countQQ = 0;
 
@@ -104,7 +100,6 @@ namespace MySniffer
         private void UIConfig(bool isStart)
         {
             comDeviceList.Enabled = !isStart;
-            comFilter.Enabled = !isStart;
             btnStart.Enabled = !isStart;
             btnStop.Enabled = isStart;
             btnOpen.Enabled = !isStart;
@@ -154,7 +149,6 @@ namespace MySniffer
                 device.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
                 //默认使用混杂模式，超时 1000
                 device.Open(devMode, readTimeOut);
-               // device.Filter = comFilter.Text;
                 device.StartCapture();
 
                 UIConfig(true);
@@ -258,7 +252,7 @@ namespace MySniffer
                 string[] rowsLinebuffer = new string[7];
 
                 rowsLinebuffer = rowsBulider.Row(packet, ++packetIndex);
-                Console.WriteLine("rowsLinebuffer is "+ rowsLinebuffer.Length);
+                
                 if (rowsLinebuffer[1] == "TCP" || rowsLinebuffer[1] == "SMTP" || rowsLinebuffer[1] == "POP3" || rowsLinebuffer[1] == "HTTP" || rowsLinebuffer[1] == "OICQ")
                 {
 
@@ -533,5 +527,7 @@ namespace MySniffer
 
             chartTimer.Start();
         }
+
+        
     }
 }

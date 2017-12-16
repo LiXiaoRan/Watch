@@ -75,8 +75,6 @@
     <Compile Include="PacketInfoApp.cs" />
     <Compile Include="PacketInfoBase.cs" />
     <Compile Include="ProcessingAllDataList.cs" />
-    <Compile Include="ProcessingEmail.cs" />
-    <Compile Include="ProcessingEmailList.cs" />
     <Compile Include="ProcessingQQLoginLogout.cs" />
     <Compile Include="ProcessingQQLoginLogoutList.cs" />
     <Compile Include="Program.cs" />
