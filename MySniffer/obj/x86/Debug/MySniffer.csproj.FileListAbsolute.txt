@@ -51,3 +51,4 @@ E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\obj\x86\
 E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\obj\x86\Debug\MySniffer.csproj.CoreCompileInputs.cache
 E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\obj\x86\Debug\MySniffer.exe
 E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\obj\x86\Debug\MySniffer.pdb
+E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\bin\Debug\MySql.Data.dll
