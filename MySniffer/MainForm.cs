@@ -10,6 +10,7 @@ using System.Threading;
 using SharpPcap;
 using SharpPcap.LibPcap;//引用SharpPcap
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Runtime.InteropServices;
 
 namespace MySniffer
 {
@@ -63,15 +64,23 @@ namespace MySniffer
             pktInfo = new PacketInfo(this.treeView1);
         }
 
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+
+        
+        bool beginMove = false;//初始化鼠标位置  
+        int currentXPosition;
+        int currentYPosition;
+
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             loadDevice();//加载窗体时加载网卡
         }
-
-
-
-       
-
 
         private void loadDevice()// 获取网卡方法
         {
@@ -528,6 +537,60 @@ namespace MySniffer
             chartTimer.Start();
         }
 
-        
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        //获取鼠标按下时的位置  
+        private void loginForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                beginMove = true;
+                currentXPosition = MousePosition.X;//鼠标的x坐标为当前窗体左上角x坐标  
+                currentYPosition = MousePosition.Y;//鼠标的y坐标为当前窗体左上角y坐标  
+            }
+        }
+
+        //获取鼠标移动到的位置  
+        private void loginForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (beginMove)
+            {
+                this.Left += MousePosition.X - currentXPosition;//根据鼠标x坐标确定窗体的左边坐标x  
+                this.Top += MousePosition.Y - currentYPosition;//根据鼠标的y坐标窗体的顶部，即Y坐标  
+                currentXPosition = MousePosition.X;
+                currentYPosition = MousePosition.Y;
+            }
+        }
+
+        //释放鼠标时的位置  
+        private void loginForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                currentXPosition = 0; //设置初始状态  
+                currentYPosition = 0;
+                beginMove = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if(FormWindowState.Maximized == this.WindowState)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

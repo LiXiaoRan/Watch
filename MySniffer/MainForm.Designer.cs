@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
@@ -61,6 +61,8 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.chartflow = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -79,7 +81,7 @@
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.White;
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnOpen,
@@ -94,6 +96,10 @@
             this.toolStrip1.Size = new System.Drawing.Size(812, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            this.toolStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginForm_MouseDown);
+            this.toolStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loginForm_MouseMove);
+            this.toolStrip1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.loginForm_MouseUp);
             // 
             // btnOpen
             // 
@@ -124,6 +130,7 @@
             // 
             // toolStripLabel1
             // 
+            this.toolStripLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(44, 37);
             this.toolStripLabel1.Text = "网卡：";
@@ -174,7 +181,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(812, 507);
-            this.splitContainer1.SplitterDistance = 197;
+            this.splitContainer1.SplitterDistance = 227;
             this.splitContainer1.TabIndex = 1;
             // 
             // dataGridPacket
@@ -193,6 +200,7 @@
             this.Column5,
             this.Column6});
             this.dataGridPacket.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridPacket.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.dataGridPacket.Location = new System.Drawing.Point(0, 0);
             this.dataGridPacket.MultiSelect = false;
             this.dataGridPacket.Name = "dataGridPacket";
@@ -204,7 +212,7 @@
             this.dataGridPacket.ShowCellToolTips = false;
             this.dataGridPacket.ShowEditingIcon = false;
             this.dataGridPacket.ShowRowErrors = false;
-            this.dataGridPacket.Size = new System.Drawing.Size(810, 195);
+            this.dataGridPacket.Size = new System.Drawing.Size(810, 225);
             this.dataGridPacket.TabIndex = 0;
             this.dataGridPacket.CancelRowEdit += new System.Windows.Forms.QuestionEventHandler(this.dataGridPacket_CancelRowEdit);
             this.dataGridPacket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPacket_CellContentClick);
@@ -248,6 +256,7 @@
             // 
             // splitContainer2
             // 
+            this.splitContainer2.BackColor = System.Drawing.Color.White;
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
@@ -263,8 +272,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.chartflow);
-            this.splitContainer2.Size = new System.Drawing.Size(812, 306);
-            this.splitContainer2.SplitterDistance = 396;
+            this.splitContainer2.Size = new System.Drawing.Size(812, 276);
+            this.splitContainer2.SplitterDistance = 409;
             this.splitContainer2.TabIndex = 0;
             // 
             // richTextBox1
@@ -273,7 +282,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.richTextBox1.Location = new System.Drawing.Point(167, 155);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(227, 149);
+            this.richTextBox1.Size = new System.Drawing.Size(240, 119);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.WordWrap = false;
@@ -287,7 +296,7 @@
             this.staffMonitoringPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.staffMonitoringPanel.Location = new System.Drawing.Point(167, 75);
             this.staffMonitoringPanel.Name = "staffMonitoringPanel";
-            this.staffMonitoringPanel.Size = new System.Drawing.Size(227, 80);
+            this.staffMonitoringPanel.Size = new System.Drawing.Size(240, 80);
             this.staffMonitoringPanel.TabIndex = 9;
             // 
             // staffMonitoringOpenLabel
@@ -320,7 +329,7 @@
             this.qqLoginPanel.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.qqLoginPanel.Location = new System.Drawing.Point(167, 0);
             this.qqLoginPanel.Name = "qqLoginPanel";
-            this.qqLoginPanel.Size = new System.Drawing.Size(227, 75);
+            this.qqLoginPanel.Size = new System.Drawing.Size(240, 75);
             this.qqLoginPanel.TabIndex = 8;
             // 
             // qqLoginOpenLabel
@@ -353,7 +362,7 @@
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(167, 304);
+            this.treeView1.Size = new System.Drawing.Size(167, 274);
             this.treeView1.TabIndex = 0;
             // 
             // imageList1
@@ -364,34 +373,58 @@
             // 
             // chartflow
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartflow.ChartAreas.Add(chartArea2);
+            chartArea13.Name = "ChartArea1";
+            this.chartflow.ChartAreas.Add(chartArea13);
             this.chartflow.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Alignment = System.Drawing.StringAlignment.Far;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.chartflow.Legends.Add(legend2);
+            legend13.Alignment = System.Drawing.StringAlignment.Far;
+            legend13.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend13.Enabled = false;
+            legend13.Name = "Legend1";
+            this.chartflow.Legends.Add(legend13);
             this.chartflow.Location = new System.Drawing.Point(0, 0);
             this.chartflow.Name = "chartflow";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.IsXValueIndexed = true;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.IsXValueIndexed = true;
-            series4.Legend = "Legend1";
-            series4.Name = "Series2";
-            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            this.chartflow.Series.Add(series3);
-            this.chartflow.Series.Add(series4);
-            this.chartflow.Size = new System.Drawing.Size(410, 304);
+            series25.ChartArea = "ChartArea1";
+            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series25.IsXValueIndexed = true;
+            series25.Legend = "Legend1";
+            series25.Name = "Series1";
+            series25.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            series26.ChartArea = "ChartArea1";
+            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series26.IsXValueIndexed = true;
+            series26.Legend = "Legend1";
+            series26.Name = "Series2";
+            series26.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            this.chartflow.Series.Add(series25);
+            this.chartflow.Series.Add(series26);
+            this.chartflow.Size = new System.Drawing.Size(397, 274);
             this.chartflow.TabIndex = 1;
             this.chartflow.Text = "chartflow";
             this.chartflow.Click += new System.EventHandler(this.chartflow_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.Red;
+            this.closeButton.Location = new System.Drawing.Point(775, 0);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(37, 28);
+            this.closeButton.TabIndex = 2;
+            this.closeButton.Text = "×";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.Location = new System.Drawing.Point(738, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 28);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "□";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MainForm
             // 
@@ -399,8 +432,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(812, 547);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "UserWatch";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -454,6 +490,8 @@
         private System.Windows.Forms.Label staffMonitoringOpenLabel;
         private System.Windows.Forms.Label staffNoticeLabel;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartflow;
+        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

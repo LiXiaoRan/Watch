@@ -52,3 +52,16 @@ E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\obj\x86\
 E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\obj\x86\Debug\MySniffer.exe
 E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\obj\x86\Debug\MySniffer.pdb
 E:\LR_Code\information_security\MySniffer\MySniffer\UserWatch\MySniffer\bin\Debug\MySql.Data.dll
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\bin\Debug\MySniffer.exe.config
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\bin\Debug\MySniffer.exe
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\bin\Debug\MySniffer.pdb
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\bin\Debug\SharpPcap.pdb
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\bin\Debug\SharpPcap.xml
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\bin\Debug\TwzyProtocol.pdb
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.csprojResolveAssemblyReference.cache
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.MainForm.resources
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.Properties.Resources.resources
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.csproj.GenerateResource.Cache
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.csproj.CoreCompileInputs.cache
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.exe
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.pdb
