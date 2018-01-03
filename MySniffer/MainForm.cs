@@ -11,6 +11,7 @@ using SharpPcap;
 using SharpPcap.LibPcap;//引用SharpPcap
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace MySniffer
 {
@@ -30,6 +31,14 @@ namespace MySniffer
 
         //行为监控界面
         private StaffMonitoringForm staffForm;
+        /// <summary>
+        /// 用户行为引用
+        /// </summary>
+        ProcessingBehave pb;
+        private System.Timers.Timer timer2 = new System.Timers.Timer();
+        private Hashtable ht;
+        /// </summary>
+        ProcessingBehaveList<ProcessingBehave> pbList = ProcessingBehaveList<ProcessingBehave>.GetInstance();
 
 
         private static readonly object syncRoot = new object();
@@ -56,15 +65,20 @@ namespace MySniffer
         List<ProcessingAllData> padBufferList = new List<ProcessingAllData>();
         List<ProcessingQQLoginLogout> pqllBufferList = new List<ProcessingQQLoginLogout>();
 
+        SaveAllToSQL saveAllData = new SaveAllToSQL();
 
 
         private int countQQ = 0;
+        private int countBehave = 0;
+
 
         public MainForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;//设置窗体居屏幕中央
+            Init();
 
-            
+
             pktInfo = new PacketInfo(this.treeView1);
         }
 
@@ -79,7 +93,15 @@ namespace MySniffer
         int currentYPosition;
 
 
+        private void Init()
+        {
+            ht = new Hashtable();
+            ht.Add("taobao", "购物,访问淘宝网站");
+            ht.Add("jd.com", "购物,访问京东商城");
+            ht.Add("blizzard", "娱乐,访问游戏：魔兽世界");
+            ht.Add("douyu", "娱乐,访问斗鱼直播平台");
 
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -267,7 +289,9 @@ namespace MySniffer
                 string[] rowsLinebuffer = new string[7];
 
                 rowsLinebuffer = rowsBulider.Row(packet, ++packetIndex);
-                
+
+                Console.WriteLine("rowsLinebuffer的长度是："+ rowsLinebuffer.Length);
+
                 if (rowsLinebuffer[1] == "TCP" || rowsLinebuffer[1] == "SMTP" || rowsLinebuffer[1] == "POP3" || rowsLinebuffer[1] == "HTTP" || rowsLinebuffer[1] == "OICQ")
                 {
 
@@ -278,9 +302,13 @@ namespace MySniffer
                     rowData.SourceAddress = rowsLinebuffer[3];
                     rowData.DestinationAddress = rowsLinebuffer[4];
                     rowData.HardwareType = rowsLinebuffer[5];
+                    Console.WriteLine("305 索引前rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
                     rowData.Time = rowsLinebuffer[6];
+                    Console.WriteLine("308 索引后rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
+
                     rowData.BinaryData = packet.Data; //?
                     rowData.Data = HexConvert.ConvertToAscii(packet.Data);
+                    Console.WriteLine("311 rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
 
                     //添加总的数据
                     lock (padList.SyncRoot)
@@ -305,6 +333,23 @@ namespace MySniffer
 
                     }
 
+
+                    //员工行为
+                    if (rowsLinebuffer[1] == "TCP" || rowsLinebuffer[1] == "HTTP")
+                    {
+                        pb = new ProcessingBehave();
+                        String key = pb.Analysis(rowData, ht, pbList);
+
+                        if (!key.Equals("key"))
+                        {
+                            ht.Remove(key);
+                            countBehave++;
+                          saveAllData.SaveAll(saveAllData.MyConnect,pb);
+                        }
+
+                    }
+
+
                 }
 
             }
@@ -314,7 +359,7 @@ namespace MySniffer
             }
 
             this.qqNoticeLabel.Text = "已捕获QQ上下线记录" + countQQ + "条";
-
+            this.staffNoticeLabel.Text= "今日新增记录" + countBehave + "条";
         }
 
 

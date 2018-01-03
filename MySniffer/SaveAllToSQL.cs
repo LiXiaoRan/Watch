@@ -92,29 +92,29 @@ namespace MySniffer
             //MySqlCommand mycmd = new MySqlCommand("insert into buyer(name,password,email) values('小王','dikd3939','1134384387@qq.com')", mycon);
         }
 
-        //public void SaveAll(MySqlConnection myConnect, ProcessingBehave rowData)
-        //{
-        //    myConnect.Open();
+        public void SaveAll(MySqlConnection myConnect, ProcessingBehave rowData)
+        {
+            myConnect.Open();
 
-        //    string sql = "";
+            string sql = "";
 
-        //    MySqlCommand myCmd = null;
+            MySqlCommand myCmd = null;
 
-        //    ///
-        //    sql = SetSQLString(rowData);
-        //    Debug.WriteLine(sql);
-        //    try
-        //    {
-        //        myCmd = new MySqlCommand(get_uft8(sql), myConnect);
-        //        myCmd.ExecuteNonQuery();
-        //    }
-        //    finally
-        //    {
-        //        myConnect.Close();
-        //    }
+            ///
+            sql = SetSQLString(rowData);
+            Debug.WriteLine(sql);
+            try
+            {
+                myCmd = new MySqlCommand(get_uft8(sql), myConnect);
+                myCmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                myConnect.Close();
+            }
 
-        //    //MySqlCommand mycmd = new MySqlCommand("insert into buyer(name,password,email) values('小王','dikd3939','1134384387@qq.com')", mycon);
-        //}
+            //MySqlCommand mycmd = new MySqlCommand("insert into buyer(name,password,email) values('小王','dikd3939','1134384387@qq.com')", mycon);
+        }
 
         private string SetSQLString(ProcessingAllData p)
         {
@@ -168,21 +168,21 @@ namespace MySniffer
             return "insert into qq_info(qqnum,qqIP,qqLogin,time) values('" + qqnum + "','" + IP + "','" + logn_out + "','" + time + "')";
         }
 
-        //private string SetSQLString(ProcessingBehave pb)
-        //{
-        //    string senderIP;
-        //    string receiverIP;
-        //    string reason;
-        //    string detailReason;
-        //    string time;
+        private string SetSQLString(ProcessingBehave pb)
+        {
+            string senderIP;
+            string receiverIP;
+            string reason;
+            string detailReason;
+            string time;
 
-        //    senderIP = pb.UserIPA;
-        //    receiverIP = pb.UserIPB;
-        //    reason = pb.Reason;
-        //    detailReason = pb.DetailReason;
-        //    time = pb.Time;
-        //    return "insert into behave_info(sender,receiver,reason,detailReason,time) values('" + senderIP + "','" + receiverIP + "','" + reason + "','" + detailReason + "','" + time + "')";
-        //}
+            senderIP = pb.UserIPA;
+            receiverIP = pb.UserIPB;
+            reason = pb.Reason;
+            detailReason = pb.DetailReason;
+            time = pb.Time;
+            return "insert into behave_info(sender,receiver,reason,detailReason,time) values('" + senderIP + "','" + receiverIP + "','" + reason + "','" + detailReason + "','" + time + "')";
+        }
 
         public List<ProcessingQQLoginLogout> SearchQQ(MySqlConnection myConnect, string startTime, string endTime, string qqNum, bool login, bool leave)
         {
@@ -226,47 +226,47 @@ namespace MySniffer
         }
 
 
-        //public List<ProcessingBehave> SearchPB(MySqlConnection myConnect, string startTime, string endTime, string sender, string receiver, bool game, bool entertainment)
-        //{
-        //    List<ProcessingBehave> datalist = new List<ProcessingBehave>();
-        //    myConnect.Open();
-        //    string sql = "";
-        //    MySqlCommand myCmd = null;
-        //    sql = "select * from behave_info where time >= '" + startTime + "'" + " and time <= '" + endTime + "'";
-        //    if (sender != "")
-        //        sql += "and sender like '" + sender + "%'";
-        //    if (receiver != "")
-        //        sql += "and receiver like '" + receiver + "%'";
-        //    if (game && (!entertainment))
-        //        sql += "and reason = " + "'娱乐'";
-        //    if ((!game) && entertainment)
-        //        sql += "and reason = " + "'购物'";
-        //    if (game && entertainment)
-        //        sql += "and reason = " + "'娱乐'" + "or reason = " + "'购物'";
-        //    Debug.WriteLine(sql);
-        //    try
-        //    {
-        //        myCmd = new MySqlCommand(get_uft8(sql), myConnect);
-        //        MySqlDataReader reader = myCmd.ExecuteReader();
-        //        ProcessingBehave row;
-        //        while (reader.Read())
-        //        {
-        //            row = new ProcessingBehave();
-        //            row.UserIPA = reader[1].ToString();
-        //            row.UserIPB = reader[2].ToString();
-        //            row.Reason = reader[3].ToString();
-        //            row.DetailReason = reader[4].ToString();
-        //            row.Time = reader[5].ToString();
-        //            datalist.Add(row);
-        //        }
-        //    }
-        //    catch (Exception ex) { }
-        //    finally
-        //    {
-        //        myConnect.Close();
-        //    }
-        //    return datalist;
-        //}
+        public List<ProcessingBehave> SearchPB(MySqlConnection myConnect, string startTime, string endTime, string sender, string receiver, bool game, bool entertainment)
+        {
+            List<ProcessingBehave> datalist = new List<ProcessingBehave>();
+            myConnect.Open();
+            string sql = "";
+            MySqlCommand myCmd = null;
+            sql = "select * from behave_info where time >= '" + startTime + "'" + " and time <= '" + endTime + "'";
+            if (sender != "")
+                sql += "and sender like '" + sender + "%'";
+            if (receiver != "")
+                sql += "and receiver like '" + receiver + "%'";
+            if (game && (!entertainment))
+                sql += "and reason = " + "'娱乐'";
+            if ((!game) && entertainment)
+                sql += "and reason = " + "'购物'";
+            if (game && entertainment)
+                sql += "and reason = " + "'娱乐'" + "or reason = " + "'购物'";
+            Debug.WriteLine(sql);
+            try
+            {
+                myCmd = new MySqlCommand(get_uft8(sql), myConnect);
+                MySqlDataReader reader = myCmd.ExecuteReader();
+                ProcessingBehave row;
+                while (reader.Read())
+                {
+                    row = new ProcessingBehave();
+                    row.UserIPA = reader[1].ToString();
+                   row.UserIPB = reader[2].ToString();
+                   row.Reason = reader[3].ToString();
+                   row.DetailReason = reader[4].ToString();
+                   row.Time = reader[5].ToString();
+                   datalist.Add(row);
+               }
+           }
+           catch (Exception ex) { }
+           finally
+           {
+               myConnect.Close();
+           }
+           return datalist;
+       }
 
 
         public static string get_uft8(string unicodeString)

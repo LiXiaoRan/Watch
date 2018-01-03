@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessingBehave.cs" />
+    <Compile Include="ProcessingBehaveList.cs" />
     <Compile Include="StaffMonitoringForm.cs">
       <SubType>Form</SubType>
     </Compile>

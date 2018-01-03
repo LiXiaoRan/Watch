@@ -369,31 +369,49 @@
 
         #endregion
 
+        //开始时间label
+        private System.Windows.Forms.Label startTimeLabel;
+        //结束时间label
+        private System.Windows.Forms.Label stopTimeLabel;
+        //娱乐网站监测
+        private System.Windows.Forms.CheckBox entertainmentSite;
+        //开始时间timePicker
+        private System.Windows.Forms.DateTimePicker startDateTimePicker;
+        //网络游戏监测
+        private System.Windows.Forms.CheckBox networkGames;
+        //开始监测
+        private System.Windows.Forms.Button startCurrentMonitoring;
+        //停止监测
+        private System.Windows.Forms.Button stopCurrentMonitoring;
+        //监测结果GroupBox
+        private System.Windows.Forms.GroupBox monitoringResultsGroupBox;
+        //DateTimeString
+        public string startDateTime;
+
+        //结束时间timePicker
+        private System.Windows.Forms.DateTimePicker stopDateTimePicker;
+        private System.Windows.Forms.DataGridView monitoringResultslistView;
         private System.Windows.Forms.GroupBox recordGroupBox;
+        private System.Windows.Forms.TextBox sourceTextBox;
+        private System.Windows.Forms.Label designatesourceIPLabel;
+        private System.Windows.Forms.Label designatedestinationIPLabel;
+        private System.Windows.Forms.TextBox destinationTextBox;
         private System.Windows.Forms.Button recordDownButton;
         private System.Windows.Forms.Button recordUpButton;
         private System.Windows.Forms.Button recordButton;
-        private System.Windows.Forms.Label designatedestinationIPLabel;
-        private System.Windows.Forms.TextBox destinationTextBox;
-        private System.Windows.Forms.Label designatesourceIPLabel;
-        private System.Windows.Forms.TextBox sourceTextBox;
-        private System.Windows.Forms.DateTimePicker stopDateTimePicker;
-        private System.Windows.Forms.Label startTimeLabel;
-        private System.Windows.Forms.Label stopTimeLabel;
-        private System.Windows.Forms.CheckBox entertainmentSite;
-        private System.Windows.Forms.DateTimePicker startDateTimePicker;
-        private System.Windows.Forms.CheckBox networkGames;
         private System.Windows.Forms.GroupBox currentMonitoringGroupBox;
         private System.Windows.Forms.Button currentDownButton;
         private System.Windows.Forms.Button currentUpButton;
-        private System.Windows.Forms.Button startCurrentMonitoring;
-        private System.Windows.Forms.Button stopCurrentMonitoring;
-        private System.Windows.Forms.GroupBox monitoringResultsGroupBox;
-        private System.Windows.Forms.DataGridView monitoringResultslistView;
+
+        //查询记录string
+        private string recordButtonString = "recordButton";
+        private string startCurrentMonitoringString = "startCurrentMonitoring";
+        private string stopCurrentMonitoringString = "stopCurrentMonitoring";
         private System.Windows.Forms.DataGridViewTextBoxColumn rowTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowSourceIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowDestinationIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowReason;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowDetailReason;
+
     }
 }
