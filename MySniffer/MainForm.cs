@@ -80,6 +80,8 @@ namespace MySniffer
         private void Form1_Load(object sender, EventArgs e)
         {
             loadDevice();//加载窗体时加载网卡
+
+
         }
 
         private void loadDevice()// 获取网卡方法

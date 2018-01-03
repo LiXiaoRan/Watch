@@ -1,10 +1,9 @@
 ﻿using PacketDotNet;
 using SharpPcap;
-using System.Windows.Forms;
-using System.Text;
 using System;
-using TwzyProtocol;
 using System.Collections.Generic;
+using System.Windows.Forms;
+using TwzyProtocol;
 
 
 namespace MySniffer
