@@ -28,6 +28,10 @@ namespace MySniffer
         delegate void DataGridRowsShowHandler(RawCapture packet);
         DataBuilder rowsBulider = new DataBuilder();
 
+        //行为监控界面
+        private StaffMonitoringForm staffForm;
+
+
         private static readonly object syncRoot = new object();
 
         PacketInfo pktInfo;
@@ -593,6 +597,34 @@ namespace MySniffer
             {
                 this.WindowState = FormWindowState.Maximized;
             }
+        }
+
+
+        private void staffMonitoringOpenLabel_Click(object sender, EventArgs e)
+        {
+            if (staffForm == null)
+            {
+                staffForm = new StaffMonitoringForm();
+                staffForm.Show();
+            }
+            else
+            {
+                if (staffForm.IsDisposed)
+                {
+                    staffForm = new StaffMonitoringForm();
+                    staffForm.Show();
+                }
+                else
+                {
+                    staffForm.WindowState = FormWindowState.Normal;
+                    staffForm.TopMost = true;
+                }
+            }
+        }
+
+        private void staffMonitoringPanel_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }

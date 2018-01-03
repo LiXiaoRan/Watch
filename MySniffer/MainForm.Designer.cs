@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
@@ -202,14 +202,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridPacket.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridPacket.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridPacket.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridPacket.EnableHeadersVisualStyles = false;
             this.dataGridPacket.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
@@ -310,6 +310,8 @@
             this.staffMonitoringPanel.Name = "staffMonitoringPanel";
             this.staffMonitoringPanel.Size = new System.Drawing.Size(240, 80);
             this.staffMonitoringPanel.TabIndex = 9;
+            this.staffMonitoringPanel.Click += new System.EventHandler(this.staffMonitoringOpenLabel_Click);
+            this.staffMonitoringPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.staffMonitoringPanel_Paint);
             // 
             // staffMonitoringOpenLabel
             // 
@@ -385,30 +387,30 @@
             // 
             // chartflow
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartflow.ChartAreas.Add(chartArea5);
+            chartArea1.Name = "ChartArea1";
+            this.chartflow.ChartAreas.Add(chartArea1);
             this.chartflow.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Alignment = System.Drawing.StringAlignment.Far;
-            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend5.Enabled = false;
-            legend5.Name = "Legend1";
-            this.chartflow.Legends.Add(legend5);
+            legend1.Alignment = System.Drawing.StringAlignment.Far;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chartflow.Legends.Add(legend1);
             this.chartflow.Location = new System.Drawing.Point(0, 0);
             this.chartflow.Name = "chartflow";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.IsXValueIndexed = true;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.IsXValueIndexed = true;
-            series10.Legend = "Legend1";
-            series10.Name = "Series2";
-            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            this.chartflow.Series.Add(series9);
-            this.chartflow.Series.Add(series10);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.IsXValueIndexed = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.IsXValueIndexed = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            this.chartflow.Series.Add(series1);
+            this.chartflow.Series.Add(series2);
             this.chartflow.Size = new System.Drawing.Size(397, 274);
             this.chartflow.TabIndex = 1;
             this.chartflow.Text = "chartflow";

@@ -65,3 +65,4 @@ E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffe
 E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.csproj.CoreCompileInputs.cache
 E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.exe
 E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.pdb
+E:\LR_Code\information_security\userWatch\Watch\MySniffer\obj\x86\Debug\MySniffer.StaffMonitoringForm.resources
