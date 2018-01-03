@@ -290,7 +290,7 @@ namespace MySniffer
 
                 rowsLinebuffer = rowsBulider.Row(packet, ++packetIndex);
 
-                Console.WriteLine("rowsLinebuffer的长度是："+ rowsLinebuffer.Length);
+                //Console.WriteLine("rowsLinebuffer的长度是："+ rowsLinebuffer.Length);
 
                 if (rowsLinebuffer[1] == "TCP" || rowsLinebuffer[1] == "SMTP" || rowsLinebuffer[1] == "POP3" || rowsLinebuffer[1] == "HTTP" || rowsLinebuffer[1] == "OICQ")
                 {
@@ -302,13 +302,13 @@ namespace MySniffer
                     rowData.SourceAddress = rowsLinebuffer[3];
                     rowData.DestinationAddress = rowsLinebuffer[4];
                     rowData.HardwareType = rowsLinebuffer[5];
-                    Console.WriteLine("305 索引前rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
+                    //Console.WriteLine("305 索引前rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
                     rowData.Time = rowsLinebuffer[6];
-                    Console.WriteLine("308 索引后rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
+                    //Console.WriteLine("308 索引后rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
 
                     rowData.BinaryData = packet.Data; //?
                     rowData.Data = HexConvert.ConvertToAscii(packet.Data);
-                    Console.WriteLine("311 rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
+                    //Console.WriteLine("311 rowsLinebuffer的长度是：" + rowsLinebuffer.Length);
 
                     //添加总的数据
                     lock (padList.SyncRoot)
@@ -344,7 +344,7 @@ namespace MySniffer
                         {
                             ht.Remove(key);
                             countBehave++;
-                          saveAllData.SaveAll(saveAllData.MyConnect,pb);
+                            //saveAllData.SaveAll(saveAllData.MyConnect,pb);
                         }
 
                     }

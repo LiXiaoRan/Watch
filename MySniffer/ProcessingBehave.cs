@@ -123,6 +123,7 @@ namespace MySniffer
                     string[] strs = str.Split(',');
                     this.reason = strs[0];
                     this.detailReason = strs[1];
+                    Console.WriteLine("reason= " + str[0]+ "detailReason= "+detailReason);
                     lock (pbList.SyncRoot)
                     {
                         pbList.Add(this);
