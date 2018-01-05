@@ -328,6 +328,8 @@ namespace MySniffer
                             {
                                 pqllList.Add(pqll);
                                 //这里写存入数据库的代码
+                                saveAllData.SaveAll(saveAllData.MyConnect, pqll);
+
                             }
                         }
 

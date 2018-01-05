@@ -286,5 +286,9 @@ namespace MySniffer
             //richTextBox1.Text = ((ProcessingBehave)pbListBuffer[index]).Caption;
         }
 
+        private void stopDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
