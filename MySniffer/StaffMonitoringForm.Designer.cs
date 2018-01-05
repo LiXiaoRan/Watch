@@ -115,6 +115,8 @@
             this.recordButton.TabIndex = 15;
             this.recordButton.Text = "查询记录";
             this.recordButton.UseVisualStyleBackColor = true;
+            this.recordButton.Click += new System.EventHandler(this.recordButton_Click);
+
             // 
             // designatedestinationIPLabel
             // 

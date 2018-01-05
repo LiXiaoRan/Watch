@@ -344,7 +344,7 @@ namespace MySniffer
                         {
                             ht.Remove(key);
                             countBehave++;
-                            //saveAllData.SaveAll(saveAllData.MyConnect,pb);
+                            saveAllData.SaveAll(saveAllData.MyConnect,pb);
                         }
 
                     }
