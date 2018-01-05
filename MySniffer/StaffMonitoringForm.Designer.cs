@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
             this.recordGroupBox = new System.Windows.Forms.GroupBox();
             this.recordDownButton = new System.Windows.Forms.Button();
             this.recordUpButton = new System.Windows.Forms.Button();
@@ -57,10 +58,14 @@
             this.rowDestinationIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rowReason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rowDetailReason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.recordGroupBox.SuspendLayout();
             this.currentMonitoringGroupBox.SuspendLayout();
             this.monitoringResultsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monitoringResultslistView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // recordGroupBox
@@ -79,9 +84,10 @@
             this.recordGroupBox.Controls.Add(this.startDateTimePicker);
             this.recordGroupBox.Controls.Add(this.networkGames);
             this.recordGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.recordGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.recordGroupBox.ForeColor = System.Drawing.Color.White;
+            this.recordGroupBox.Location = new System.Drawing.Point(12, 51);
             this.recordGroupBox.Name = "recordGroupBox";
-            this.recordGroupBox.Size = new System.Drawing.Size(300, 461);
+            this.recordGroupBox.Size = new System.Drawing.Size(300, 422);
             this.recordGroupBox.TabIndex = 12;
             this.recordGroupBox.TabStop = false;
             this.recordGroupBox.Text = "记录查询";
@@ -89,6 +95,7 @@
             // recordDownButton
             // 
             this.recordDownButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.recordDownButton.ForeColor = System.Drawing.Color.Black;
             this.recordDownButton.Location = new System.Drawing.Point(152, 402);
             this.recordDownButton.Name = "recordDownButton";
             this.recordDownButton.Size = new System.Drawing.Size(90, 32);
@@ -99,6 +106,7 @@
             // recordUpButton
             // 
             this.recordUpButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.recordUpButton.ForeColor = System.Drawing.Color.Black;
             this.recordUpButton.Location = new System.Drawing.Point(42, 402);
             this.recordUpButton.Name = "recordUpButton";
             this.recordUpButton.Size = new System.Drawing.Size(90, 32);
@@ -109,6 +117,7 @@
             // recordButton
             // 
             this.recordButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.recordButton.ForeColor = System.Drawing.Color.Black;
             this.recordButton.Location = new System.Drawing.Point(42, 364);
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(200, 32);
@@ -223,6 +232,7 @@
             this.currentMonitoringGroupBox.Controls.Add(this.startCurrentMonitoring);
             this.currentMonitoringGroupBox.Controls.Add(this.stopCurrentMonitoring);
             this.currentMonitoringGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.currentMonitoringGroupBox.ForeColor = System.Drawing.Color.White;
             this.currentMonitoringGroupBox.Location = new System.Drawing.Point(12, 479);
             this.currentMonitoringGroupBox.Name = "currentMonitoringGroupBox";
             this.currentMonitoringGroupBox.Size = new System.Drawing.Size(300, 200);
@@ -233,6 +243,7 @@
             // currentDownButton
             // 
             this.currentDownButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.currentDownButton.ForeColor = System.Drawing.Color.Black;
             this.currentDownButton.Location = new System.Drawing.Point(151, 87);
             this.currentDownButton.Name = "currentDownButton";
             this.currentDownButton.Size = new System.Drawing.Size(90, 32);
@@ -243,6 +254,7 @@
             // currentUpButton
             // 
             this.currentUpButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.currentUpButton.ForeColor = System.Drawing.Color.Black;
             this.currentUpButton.Location = new System.Drawing.Point(41, 87);
             this.currentUpButton.Name = "currentUpButton";
             this.currentUpButton.Size = new System.Drawing.Size(90, 32);
@@ -253,6 +265,7 @@
             // startCurrentMonitoring
             // 
             this.startCurrentMonitoring.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.startCurrentMonitoring.ForeColor = System.Drawing.Color.Black;
             this.startCurrentMonitoring.Location = new System.Drawing.Point(42, 33);
             this.startCurrentMonitoring.Name = "startCurrentMonitoring";
             this.startCurrentMonitoring.Size = new System.Drawing.Size(200, 32);
@@ -264,6 +277,7 @@
             // stopCurrentMonitoring
             // 
             this.stopCurrentMonitoring.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.stopCurrentMonitoring.ForeColor = System.Drawing.Color.Black;
             this.stopCurrentMonitoring.Location = new System.Drawing.Point(41, 141);
             this.stopCurrentMonitoring.Name = "stopCurrentMonitoring";
             this.stopCurrentMonitoring.Size = new System.Drawing.Size(200, 32);
@@ -279,9 +293,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.monitoringResultsGroupBox.Controls.Add(this.monitoringResultslistView);
             this.monitoringResultsGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.monitoringResultsGroupBox.Location = new System.Drawing.Point(318, 12);
+            this.monitoringResultsGroupBox.ForeColor = System.Drawing.Color.White;
+            this.monitoringResultsGroupBox.Location = new System.Drawing.Point(318, 51);
             this.monitoringResultsGroupBox.Name = "monitoringResultsGroupBox";
-            this.monitoringResultsGroupBox.Size = new System.Drawing.Size(917, 667);
+            this.monitoringResultsGroupBox.Size = new System.Drawing.Size(917, 628);
             this.monitoringResultsGroupBox.TabIndex = 14;
             this.monitoringResultsGroupBox.TabStop = false;
             this.monitoringResultsGroupBox.Text = "检测结果";
@@ -290,14 +305,14 @@
             // 
             this.monitoringResultslistView.AllowUserToAddRows = false;
             this.monitoringResultslistView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.monitoringResultslistView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle85.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle85.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.monitoringResultslistView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle85;
             this.monitoringResultslistView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.monitoringResultslistView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rowTime,
@@ -309,25 +324,32 @@
             this.monitoringResultslistView.Location = new System.Drawing.Point(3, 25);
             this.monitoringResultslistView.Name = "monitoringResultslistView";
             this.monitoringResultslistView.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.monitoringResultslistView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle87.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle87.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.monitoringResultslistView.RowHeadersDefaultCellStyle = dataGridViewCellStyle87;
             this.monitoringResultslistView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.monitoringResultslistView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle88.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle88.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.monitoringResultslistView.RowsDefaultCellStyle = dataGridViewCellStyle88;
             this.monitoringResultslistView.RowTemplate.Height = 23;
             this.monitoringResultslistView.ShowEditingIcon = false;
-            this.monitoringResultslistView.Size = new System.Drawing.Size(911, 639);
+            this.monitoringResultslistView.Size = new System.Drawing.Size(911, 600);
             this.monitoringResultslistView.TabIndex = 0;
             // 
             // rowTime
             // 
+            dataGridViewCellStyle86.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle86.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.Color.White;
+            this.rowTime.DefaultCellStyle = dataGridViewCellStyle86;
             this.rowTime.HeaderText = "时间";
             this.rowTime.Name = "rowTime";
             this.rowTime.ReadOnly = true;
@@ -361,21 +383,73 @@
             this.rowDetailReason.ReadOnly = true;
             this.rowDetailReason.Width = 182;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.Red;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1247, 45);
+            this.panel1.TabIndex = 1;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loginForm_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loginForm_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.loginForm_MouseUp);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.Color.Snow;
+            this.button1.Location = new System.Drawing.Point(1200, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 45);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "×";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.ForeColor = System.Drawing.Color.Snow;
+            this.button2.Location = new System.Drawing.Point(1153, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(47, 45);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "□";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // StaffMonitoringForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(1247, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.monitoringResultsGroupBox);
             this.Controls.Add(this.currentMonitoringGroupBox);
             this.Controls.Add(this.recordGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StaffMonitoringForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.StaffMonitoringForm_Load_1);
             this.recordGroupBox.ResumeLayout(false);
             this.recordGroupBox.PerformLayout();
             this.currentMonitoringGroupBox.ResumeLayout(false);
             this.monitoringResultsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.monitoringResultslistView)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -425,5 +499,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rowDestinationIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowReason;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowDetailReason;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
