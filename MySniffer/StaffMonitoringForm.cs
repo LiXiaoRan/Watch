@@ -370,16 +370,17 @@ namespace MySniffer
 
         private void confirmRule_Click(object sender, EventArgs e)
         {
+            
             String rule1 = this.ruelText1.Text;
-            String rule2 = this.ruelText2.Text;
+            String rule2 = this.comboBox1.SelectedItem.ToString();
             String rule3 = this.ruelText3.Text;
             String mixrule = rule2 + "," + rule3;
-
+            
             Console.WriteLine("rule1 = "+ rule1);
             Console.WriteLine("rule2 = " + rule2);
             Console.WriteLine("rule3 = " + rule3);
             Console.WriteLine("mixrule = " + mixrule);
-
+            
             myHt.Add(rule1, mixrule);
 
         }
