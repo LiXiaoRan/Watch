@@ -15,12 +15,15 @@ using System.Runtime.InteropServices;
 
 namespace MySniffer
 {
+    
     public partial class StaffMonitoringForm : Form
     {
-        public StaffMonitoringForm()
+        Hashtable myHt;
+        public StaffMonitoringForm(Hashtable ht)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;//设置窗体居屏幕中央
+            myHt = ht;
         }
 
         [DllImport("user32.dll")]
@@ -358,6 +361,27 @@ namespace MySniffer
                 currentYPosition = 0;
                 beginMove = false;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void confirmRule_Click(object sender, EventArgs e)
+        {
+            String rule1 = this.ruelText1.Text;
+            String rule2 = this.ruelText2.Text;
+            String rule3 = this.ruelText3.Text;
+            String mixrule = rule2 + "," + rule3;
+
+            Console.WriteLine("rule1 = "+ rule1);
+            Console.WriteLine("rule2 = " + rule2);
+            Console.WriteLine("rule3 = " + rule3);
+            Console.WriteLine("mixrule = " + mixrule);
+
+            myHt.Add(rule1, mixrule);
+
         }
     }
 }

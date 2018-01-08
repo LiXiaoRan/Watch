@@ -656,14 +656,14 @@ namespace MySniffer
         {
             if (staffForm == null)
             {
-                staffForm = new StaffMonitoringForm();
+                staffForm = new StaffMonitoringForm(ht);
                 staffForm.Show();
             }
             else
             {
                 if (staffForm.IsDisposed)
                 {
-                    staffForm = new StaffMonitoringForm();
+                    staffForm = new StaffMonitoringForm(ht);
                     staffForm.Show();
                 }
                 else
