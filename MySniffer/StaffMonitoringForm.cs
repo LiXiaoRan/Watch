@@ -383,5 +383,15 @@ namespace MySniffer
             myHt.Add(rule1, mixrule);
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ruelText2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
