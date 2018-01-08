@@ -366,7 +366,7 @@ namespace MySniffer
             }
 
             this.qqNoticeLabel.Text = "已捕获QQ上下线记录" + countQQ + "条";
-            this.staffNoticeLabel.Text= "今日新增记录" + countBehave + "条";
+            this.staffNoticeLabel.Text= "已捕获影音娱乐记录" + countBehave + "条";
         }
 
 
@@ -705,6 +705,11 @@ namespace MySniffer
                     qqForm.TopMost = true;
                 }
             }
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("我们的Github是：https://github.com/LiXiaoRan/Watch \n 联系我们：leeranelite@gmail.com");
         }
     }
 }
