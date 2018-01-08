@@ -31,6 +31,10 @@ namespace MySniffer
 
         //行为监控界面
         private StaffMonitoringForm staffForm;
+
+        //QQ界面
+        private QQForm qqForm;
+
         /// <summary>
         /// 用户行为引用
         /// </summary>
@@ -672,6 +676,34 @@ namespace MySniffer
         private void staffMonitoringPanel_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void qqLoginPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void qqLoginPanel_Click(object sender, EventArgs e)
+        {
+            if (qqForm == null)
+            {
+                qqForm = new QQForm();
+                qqForm.Show();
+            }
+            else
+            {
+                if (qqForm.IsDisposed)
+                {
+                    qqForm = new QQForm();
+                    qqForm.Show();
+                }
+                else
+                {
+                    qqForm.WindowState = FormWindowState.Normal;
+                    qqForm.TopMost = true;
+                }
+            }
         }
     }
 }

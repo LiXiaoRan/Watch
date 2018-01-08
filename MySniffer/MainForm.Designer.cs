@@ -394,6 +394,8 @@
             this.qqLoginPanel.Name = "qqLoginPanel";
             this.qqLoginPanel.Size = new System.Drawing.Size(240, 75);
             this.qqLoginPanel.TabIndex = 8;
+            this.qqLoginPanel.Click += new System.EventHandler(this.qqLoginPanel_Click);
+            this.qqLoginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.qqLoginPanel_Paint);
             // 
             // qqLoginOpenLabel
             // 

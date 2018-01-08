@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.recordGroupBox = new System.Windows.Forms.GroupBox();
             this.recordDownButton = new System.Windows.Forms.Button();
             this.recordUpButton = new System.Windows.Forms.Button();
@@ -62,6 +62,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.查询筛选 = new System.Windows.Forms.Label();
             this.rowTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rowSourceIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rowDestinationIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +77,10 @@
             // 
             // recordGroupBox
             // 
+            this.recordGroupBox.Controls.Add(this.查询筛选);
             this.recordGroupBox.Controls.Add(this.recordDownButton);
+            this.recordGroupBox.Controls.Add(this.currentMonitoringGroupBox);
+            this.recordGroupBox.Controls.Add(this.monitoringResultsGroupBox);
             this.recordGroupBox.Controls.Add(this.recordUpButton);
             this.recordGroupBox.Controls.Add(this.recordButton);
             this.recordGroupBox.Controls.Add(this.designatedestinationIPLabel);
@@ -91,9 +95,9 @@
             this.recordGroupBox.Controls.Add(this.networkGames);
             this.recordGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.recordGroupBox.ForeColor = System.Drawing.Color.White;
-            this.recordGroupBox.Location = new System.Drawing.Point(12, 51);
+            this.recordGroupBox.Location = new System.Drawing.Point(27, 51);
             this.recordGroupBox.Name = "recordGroupBox";
-            this.recordGroupBox.Size = new System.Drawing.Size(300, 422);
+            this.recordGroupBox.Size = new System.Drawing.Size(1208, 630);
             this.recordGroupBox.TabIndex = 12;
             this.recordGroupBox.TabStop = false;
             this.recordGroupBox.Text = "记录查询";
@@ -102,7 +106,7 @@
             // 
             this.recordDownButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.recordDownButton.ForeColor = System.Drawing.Color.Black;
-            this.recordDownButton.Location = new System.Drawing.Point(152, 390);
+            this.recordDownButton.Location = new System.Drawing.Point(151, 257);
             this.recordDownButton.Name = "recordDownButton";
             this.recordDownButton.Size = new System.Drawing.Size(90, 32);
             this.recordDownButton.TabIndex = 17;
@@ -113,7 +117,7 @@
             // 
             this.recordUpButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.recordUpButton.ForeColor = System.Drawing.Color.Black;
-            this.recordUpButton.Location = new System.Drawing.Point(42, 390);
+            this.recordUpButton.Location = new System.Drawing.Point(41, 256);
             this.recordUpButton.Name = "recordUpButton";
             this.recordUpButton.Size = new System.Drawing.Size(90, 32);
             this.recordUpButton.TabIndex = 16;
@@ -124,7 +128,7 @@
             // 
             this.recordButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.recordButton.ForeColor = System.Drawing.Color.Black;
-            this.recordButton.Location = new System.Drawing.Point(42, 347);
+            this.recordButton.Location = new System.Drawing.Point(41, 197);
             this.recordButton.Name = "recordButton";
             this.recordButton.Size = new System.Drawing.Size(200, 32);
             this.recordButton.TabIndex = 15;
@@ -136,7 +140,7 @@
             // 
             this.designatedestinationIPLabel.AutoSize = true;
             this.designatedestinationIPLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.designatedestinationIPLabel.Location = new System.Drawing.Point(38, 202);
+            this.designatedestinationIPLabel.Location = new System.Drawing.Point(288, 98);
             this.designatedestinationIPLabel.Name = "designatedestinationIPLabel";
             this.designatedestinationIPLabel.Size = new System.Drawing.Size(82, 20);
             this.designatedestinationIPLabel.TabIndex = 14;
@@ -144,7 +148,7 @@
             // 
             // destinationTextBox
             // 
-            this.destinationTextBox.Location = new System.Drawing.Point(41, 224);
+            this.destinationTextBox.Location = new System.Drawing.Point(291, 120);
             this.destinationTextBox.Multiline = true;
             this.destinationTextBox.Name = "destinationTextBox";
             this.destinationTextBox.Size = new System.Drawing.Size(200, 24);
@@ -154,7 +158,7 @@
             // 
             this.designatesourceIPLabel.AutoSize = true;
             this.designatesourceIPLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.designatesourceIPLabel.Location = new System.Drawing.Point(37, 142);
+            this.designatesourceIPLabel.Location = new System.Drawing.Point(37, 98);
             this.designatesourceIPLabel.Name = "designatesourceIPLabel";
             this.designatesourceIPLabel.Size = new System.Drawing.Size(82, 20);
             this.designatesourceIPLabel.TabIndex = 12;
@@ -162,7 +166,7 @@
             // 
             // sourceTextBox
             // 
-            this.sourceTextBox.Location = new System.Drawing.Point(41, 164);
+            this.sourceTextBox.Location = new System.Drawing.Point(41, 120);
             this.sourceTextBox.Multiline = true;
             this.sourceTextBox.Name = "sourceTextBox";
             this.sourceTextBox.Size = new System.Drawing.Size(200, 24);
@@ -172,7 +176,7 @@
             // 
             this.stopDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.stopDateTimePicker.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.stopDateTimePicker.Location = new System.Drawing.Point(41, 107);
+            this.stopDateTimePicker.Location = new System.Drawing.Point(291, 52);
             this.stopDateTimePicker.Name = "stopDateTimePicker";
             this.stopDateTimePicker.Size = new System.Drawing.Size(200, 23);
             this.stopDateTimePicker.TabIndex = 10;
@@ -192,7 +196,7 @@
             // 
             this.stopTimeLabel.AutoSize = true;
             this.stopTimeLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.stopTimeLabel.Location = new System.Drawing.Point(38, 85);
+            this.stopTimeLabel.Location = new System.Drawing.Point(288, 30);
             this.stopTimeLabel.Name = "stopTimeLabel";
             this.stopTimeLabel.Size = new System.Drawing.Size(69, 20);
             this.stopTimeLabel.TabIndex = 9;
@@ -202,11 +206,11 @@
             // 
             this.entertainmentSite.AutoSize = true;
             this.entertainmentSite.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.entertainmentSite.Location = new System.Drawing.Point(42, 314);
+            this.entertainmentSite.Location = new System.Drawing.Point(628, 110);
             this.entertainmentSite.Name = "entertainmentSite";
-            this.entertainmentSite.Size = new System.Drawing.Size(131, 27);
+            this.entertainmentSite.Size = new System.Drawing.Size(97, 27);
             this.entertainmentSite.TabIndex = 2;
-            this.entertainmentSite.Text = "购物网站监测";
+            this.entertainmentSite.Text = "购物行为";
             this.entertainmentSite.UseVisualStyleBackColor = true;
             this.entertainmentSite.CheckedChanged += new System.EventHandler(this.entertainmentSite_CheckedChanged);
             // 
@@ -223,11 +227,11 @@
             // 
             this.networkGames.AutoSize = true;
             this.networkGames.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.networkGames.Location = new System.Drawing.Point(42, 277);
+            this.networkGames.Location = new System.Drawing.Point(628, 73);
             this.networkGames.Name = "networkGames";
-            this.networkGames.Size = new System.Drawing.Size(131, 27);
+            this.networkGames.Size = new System.Drawing.Size(97, 27);
             this.networkGames.TabIndex = 1;
-            this.networkGames.Text = "娱乐游戏监测";
+            this.networkGames.Text = "娱乐行为";
             this.networkGames.UseVisualStyleBackColor = true;
             this.networkGames.CheckedChanged += new System.EventHandler(this.networkGames_CheckedChanged);
             // 
@@ -239,9 +243,9 @@
             this.currentMonitoringGroupBox.Controls.Add(this.stopCurrentMonitoring);
             this.currentMonitoringGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.currentMonitoringGroupBox.ForeColor = System.Drawing.Color.White;
-            this.currentMonitoringGroupBox.Location = new System.Drawing.Point(12, 479);
+            this.currentMonitoringGroupBox.Location = new System.Drawing.Point(15, 323);
             this.currentMonitoringGroupBox.Name = "currentMonitoringGroupBox";
-            this.currentMonitoringGroupBox.Size = new System.Drawing.Size(300, 200);
+            this.currentMonitoringGroupBox.Size = new System.Drawing.Size(300, 280);
             this.currentMonitoringGroupBox.TabIndex = 13;
             this.currentMonitoringGroupBox.TabStop = false;
             this.currentMonitoringGroupBox.Text = "实时监测";
@@ -250,7 +254,7 @@
             // 
             this.currentDownButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.currentDownButton.ForeColor = System.Drawing.Color.Black;
-            this.currentDownButton.Location = new System.Drawing.Point(151, 87);
+            this.currentDownButton.Location = new System.Drawing.Point(151, 140);
             this.currentDownButton.Name = "currentDownButton";
             this.currentDownButton.Size = new System.Drawing.Size(90, 32);
             this.currentDownButton.TabIndex = 19;
@@ -261,7 +265,7 @@
             // 
             this.currentUpButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.currentUpButton.ForeColor = System.Drawing.Color.Black;
-            this.currentUpButton.Location = new System.Drawing.Point(41, 87);
+            this.currentUpButton.Location = new System.Drawing.Point(41, 140);
             this.currentUpButton.Name = "currentUpButton";
             this.currentUpButton.Size = new System.Drawing.Size(90, 32);
             this.currentUpButton.TabIndex = 18;
@@ -272,7 +276,7 @@
             // 
             this.startCurrentMonitoring.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.startCurrentMonitoring.ForeColor = System.Drawing.Color.Black;
-            this.startCurrentMonitoring.Location = new System.Drawing.Point(42, 33);
+            this.startCurrentMonitoring.Location = new System.Drawing.Point(42, 77);
             this.startCurrentMonitoring.Name = "startCurrentMonitoring";
             this.startCurrentMonitoring.Size = new System.Drawing.Size(200, 32);
             this.startCurrentMonitoring.TabIndex = 4;
@@ -284,7 +288,7 @@
             // 
             this.stopCurrentMonitoring.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.stopCurrentMonitoring.ForeColor = System.Drawing.Color.Black;
-            this.stopCurrentMonitoring.Location = new System.Drawing.Point(41, 141);
+            this.stopCurrentMonitoring.Location = new System.Drawing.Point(41, 203);
             this.stopCurrentMonitoring.Name = "stopCurrentMonitoring";
             this.stopCurrentMonitoring.Size = new System.Drawing.Size(200, 32);
             this.stopCurrentMonitoring.TabIndex = 5;
@@ -300,31 +304,31 @@
             this.monitoringResultsGroupBox.Controls.Add(this.monitoringResultslistView);
             this.monitoringResultsGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.monitoringResultsGroupBox.ForeColor = System.Drawing.Color.White;
-            this.monitoringResultsGroupBox.Location = new System.Drawing.Point(318, 51);
+            this.monitoringResultsGroupBox.Location = new System.Drawing.Point(326, 169);
             this.monitoringResultsGroupBox.Name = "monitoringResultsGroupBox";
-            this.monitoringResultsGroupBox.Size = new System.Drawing.Size(917, 628);
+            this.monitoringResultsGroupBox.Size = new System.Drawing.Size(863, 437);
             this.monitoringResultsGroupBox.TabIndex = 14;
             this.monitoringResultsGroupBox.TabStop = false;
-            this.monitoringResultsGroupBox.Text = "检测结果";
+            this.monitoringResultsGroupBox.Text = "行为检测";
             // 
             // monitoringResultslistView
             // 
             this.monitoringResultslistView.AllowUserToAddRows = false;
             this.monitoringResultslistView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.monitoringResultslistView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.monitoringResultslistView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.monitoringResultslistView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.monitoringResultslistView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.monitoringResultslistView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.monitoringResultslistView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.monitoringResultslistView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.monitoringResultslistView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rowTime,
@@ -333,40 +337,40 @@
             this.rowReason,
             this.rowDetailReason});
             this.monitoringResultslistView.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.monitoringResultslistView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.monitoringResultslistView.DefaultCellStyle = dataGridViewCellStyle18;
             this.monitoringResultslistView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.monitoringResultslistView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.monitoringResultslistView.Location = new System.Drawing.Point(3, 25);
             this.monitoringResultslistView.Name = "monitoringResultslistView";
             this.monitoringResultslistView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.monitoringResultslistView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.monitoringResultslistView.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.monitoringResultslistView.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.monitoringResultslistView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.monitoringResultslistView.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.monitoringResultslistView.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.monitoringResultslistView.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.monitoringResultslistView.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.monitoringResultslistView.RowTemplate.Height = 23;
             this.monitoringResultslistView.ShowEditingIcon = false;
-            this.monitoringResultslistView.Size = new System.Drawing.Size(911, 600);
+            this.monitoringResultslistView.Size = new System.Drawing.Size(857, 409);
             this.monitoringResultslistView.TabIndex = 0;
             // 
             // panel1
@@ -416,60 +420,70 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // 查询筛选
+            // 
+            this.查询筛选.AutoSize = true;
+            this.查询筛选.Location = new System.Drawing.Point(623, 30);
+            this.查询筛选.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.查询筛选.Name = "查询筛选";
+            this.查询筛选.Size = new System.Drawing.Size(92, 27);
+            this.查询筛选.TabIndex = 21;
+            this.查询筛选.Text = "查询筛选";
+            // 
             // rowTime
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.rowTime.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.rowTime.DefaultCellStyle = dataGridViewCellStyle13;
             this.rowTime.HeaderText = "时间";
             this.rowTime.Name = "rowTime";
             this.rowTime.ReadOnly = true;
-            this.rowTime.Width = 182;
+            this.rowTime.Width = 171;
             // 
             // rowSourceIP
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.rowSourceIP.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.rowSourceIP.DefaultCellStyle = dataGridViewCellStyle14;
             this.rowSourceIP.HeaderText = "源端IP";
             this.rowSourceIP.Name = "rowSourceIP";
             this.rowSourceIP.ReadOnly = true;
-            this.rowSourceIP.Width = 182;
+            this.rowSourceIP.Width = 171;
             // 
             // rowDestinationIP
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.rowDestinationIP.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.rowDestinationIP.DefaultCellStyle = dataGridViewCellStyle15;
             this.rowDestinationIP.HeaderText = "目标端IP";
             this.rowDestinationIP.Name = "rowDestinationIP";
             this.rowDestinationIP.ReadOnly = true;
-            this.rowDestinationIP.Width = 182;
+            this.rowDestinationIP.Width = 171;
             // 
             // rowReason
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.rowReason.DefaultCellStyle = dataGridViewCellStyle6;
-            this.rowReason.HeaderText = "原因";
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.rowReason.DefaultCellStyle = dataGridViewCellStyle16;
+            this.rowReason.HeaderText = "用户行为";
             this.rowReason.Name = "rowReason";
             this.rowReason.ReadOnly = true;
-            this.rowReason.Width = 182;
+            this.rowReason.Width = 171;
             // 
             // rowDetailReason
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.rowDetailReason.DefaultCellStyle = dataGridViewCellStyle7;
-            this.rowDetailReason.HeaderText = "详细原因";
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.rowDetailReason.DefaultCellStyle = dataGridViewCellStyle17;
+            this.rowDetailReason.HeaderText = "具体方式";
             this.rowDetailReason.Name = "rowDetailReason";
             this.rowDetailReason.ReadOnly = true;
-            this.rowDetailReason.Width = 182;
+            this.rowDetailReason.Width = 171;
             // 
             // StaffMonitoringForm
             // 
@@ -478,8 +492,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(1247, 681);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.monitoringResultsGroupBox);
-            this.Controls.Add(this.currentMonitoringGroupBox);
             this.Controls.Add(this.recordGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StaffMonitoringForm";
@@ -537,11 +549,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView monitoringResultslistView;
+        private System.Windows.Forms.Label 查询筛选;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowSourceIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowDestinationIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowReason;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowDetailReason;
-        private System.Windows.Forms.DataGridView monitoringResultslistView;
     }
 }
