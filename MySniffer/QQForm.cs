@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace MySniffer
 {
@@ -32,12 +33,24 @@ namespace MySniffer
         private string startCurrentMonitoringString = "startCurrentMonitoring";
         private string stopCurrentMonitoringString = "stopCurrentMonitoring";
 
+
+
+
         public QQForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;//设置窗体居屏幕中央
             //this.Opacity = 0.92;
         }
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern bool SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+
+        bool beginMove = false;//初始化鼠标位置  
+        int currentXPosition;
+        int currentYPosition;
 
         private void QQForm_Load(object sender, EventArgs e)
         {
@@ -266,6 +279,60 @@ namespace MySniffer
         {
             UIConfig(stopCurrentMonitoringString);
             ExitThread();
+        }
+
+
+        //获取鼠标按下时的位置  
+        private void loginForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                beginMove = true;
+                currentXPosition = MousePosition.X;//鼠标的x坐标为当前窗体左上角x坐标  
+                currentYPosition = MousePosition.Y;//鼠标的y坐标为当前窗体左上角y坐标  
+            }
+        }
+
+        //获取鼠标移动到的位置  
+        private void loginForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (beginMove)
+            {
+                this.Left += MousePosition.X - currentXPosition;//根据鼠标x坐标确定窗体的左边坐标x  
+                this.Top += MousePosition.Y - currentYPosition;//根据鼠标的y坐标窗体的顶部，即Y坐标  
+                currentXPosition = MousePosition.X;
+                currentYPosition = MousePosition.Y;
+            }
+        }
+
+        //释放鼠标时的位置  
+        private void loginForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                currentXPosition = 0; //设置初始状态  
+                currentYPosition = 0;
+                beginMove = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //关闭窗口
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //窗口最大化和最小化的代码
+            if (FormWindowState.Maximized == this.WindowState)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 }

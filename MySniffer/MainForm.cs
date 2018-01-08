@@ -104,6 +104,7 @@ namespace MySniffer
             ht.Add("jd.com", "购物,访问京东商城");
             ht.Add("blizzard", "娱乐,访问游戏：魔兽世界");
             ht.Add("douyu", "娱乐,访问斗鱼直播平台");
+            ht.Add("NetEase", "娱乐,网易云听歌");
 
         }
 
