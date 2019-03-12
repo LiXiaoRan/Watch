@@ -1,5 +1,6 @@
 # UserWatch
 <center></center>
-![Aaron Swartz](https://raw.githubusercontent.com/LiXiaoRan/Watch/master/image/watchDog.png)
+![Aaron Swartz](image/watchDog.png)
 <br>
-<center>WatchDog软件主界面</center>
+<h1 style="text-align:center">WatchDog软件主界面 </h1>
+
